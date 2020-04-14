@@ -6,6 +6,7 @@
           class="mx-1"
           color="primary"
           @click="messages++"
+          data-test="increment-badge"
         >
           Send Message
         </v-btn>
@@ -14,12 +15,14 @@
           class="mx-1"
           color="error"
           @click="messages = 0"
+          data-test="clear-badge"
         >
           Clear Notifications
         </v-btn>
       </div>
 
       <v-badge
+        data-test="badge"
         :content="messages"
         :value="messages"
         color="green"

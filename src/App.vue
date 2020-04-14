@@ -39,12 +39,16 @@
     <div>Super</div>
 
     <v-content>
-      <Treeview/>
-      <v-icon v-for="icon in iconClasses" :key="icon">{{ icon }}</v-icon>
-      <HelloWorld/>
-      <DataTable/>
-      <Badge/>
-      <Banner/>
+      <DataTable data-test="data-table"/>
+      <Badge data-test="badge"/>
+      <Banner data-test="banner"/>
+      <Treeview data-test="tree-view"/>
+      <ul data-test="icon-collection">
+        <li v-for="icon in iconClasses" :key="icon">
+          <v-icon>{{ icon }}</v-icon>
+        </li>
+      </ul>
+      <HelloWorld data-test="hello-world"/>
     </v-content>
   </v-app>
 </template>

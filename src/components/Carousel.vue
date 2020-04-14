@@ -8,6 +8,7 @@
     <v-carousel
       :continuous="false"
       :cycle="cycle"
+      :interval="interval"
       :show-arrows="false"
       hide-delimiter-background
       delimiter-icon="mdi-minus"
@@ -27,7 +28,7 @@
             align="center"
             justify="center"
           >
-            <div class="display-3">{{ slide }} Slide</div>
+            <div :aria-label="`Carousel Slide ${i + 1}`" class="display-3">{{ slide }} Slide</div>
           </v-row>
         </v-sheet>
       </v-carousel-item>
@@ -55,6 +56,7 @@
 
 <script>
   export default {
+    props: ['initialCycle', 'interval'],
     data () {
       return {
         colors: [
@@ -64,7 +66,8 @@
           'red lighten-2',
           'orange darken-1',
         ],
-        cycle: false,
+        cycle: this.initialCycle,
+        interval: this.interval,
         slides: [
           'First',
           'Second',

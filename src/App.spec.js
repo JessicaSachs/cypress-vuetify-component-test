@@ -14,10 +14,12 @@ describe('Simple App', () => {
     { extensions: { plugins: [ Vuetify ] } })
   }),
 
-  it('CLI documentation link is correct', () => {
-    expect(true).to.equal(true)
-      // cy.get('[data-testid=docs-link]')
-      //     .and('have.attr', 'href')
-      //     .and('include', 'vuetifyjs.com')
+  it('showcases components', () => {
+    cy.get('[data-test=tree-view]')
+    cy.get('[data-test=icon-collection] > *')
+    cy.get('[data-test=hello-world]')
+    cy.get('[data-test=data-table]')
+    cy.get('[data-test=badge]')
+    cy.get('[data-test=banner]')
   })
 })
